@@ -10,7 +10,7 @@ This repository will contain multiple R scripts for generating and visualizing m
 ## Usage
 1. Clone the repository:
    ```sh
-   git clone https://github.com/<your-username>/r-curves.git
+   git clone https://github.com/<medmond78/r-curves.git
    ```
 2. Open one of the R scripts (e.g., `euler_spiral.R`) in RStudio or VS Code.
 3. Run the script to generate and plot the corresponding curve(s).

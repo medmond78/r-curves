@@ -72,3 +72,33 @@ p <- ggplot(all_clothoids, aes(x, y, color = type)) +
   theme(legend.position = "bottom")
 
 print(p)
+
+# Save each curve as a separate SVG
+curve_list <- list(
+  clothoid_standard,
+  clothoid_quadratic,
+  clothoid_sqrt,
+  clothoid_sine,
+  clothoid_exp,
+  clothoid_step
+)
+curve_names <- c(
+  "linear",
+  "quadratic",
+  "sqrt",
+  "sine",
+  "exp",
+  "step"
+)
+
+for (i in seq_along(curve_list)) {
+  p <- ggplot(curve_list[[i]], aes(x, y)) +
+    geom_path(size = 1) +
+    theme_void() +
+    coord_equal()
+  ggsave(
+    filename = paste0(curve_names[i], ".svg"),
+    plot = p,
+    width = 6, height = 6, units = "in"
+  )
+}
